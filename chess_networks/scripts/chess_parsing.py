@@ -8,6 +8,7 @@ import os
 # Add this app to the path so imports work as expected
 APP_PATH = os.path.join(os.path.dirname(__file__), '../')
 sys.path.append(APP_PATH)
+
 from lib.chess import *
 
 
