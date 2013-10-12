@@ -13,21 +13,31 @@ from lib.chess import *
 
 
 if __name__ == "__main__":
-    game = Game()
     file_pgn = open('data/Kasparov.pgn')
+    game = Game()
     game.import_pgn(file_pgn)
     moves = [x.split(".")[-1] for x in game.movetext.split(" ")]
     last_index = moves.index('')
     q = deque(moves[0:last_index])
-
     count = 0
+    winner = None
+    if game.tags['Result'] == '1-0':
+        winner = WHITE
+    elif game.tags['Result'] == '0-1':
+        winner = BLACK
+    fout = open('network_data.tsv', 'w')
+    headers = ['move', 'side', 'strongly_connected_components',\
+     'weakly_connected_components', 'average_shortest_path_length',\
+     'winner?']
+    for head in headers:
+        fout.write(head + '\t')
+    fout.write('\n')    
     while q:
-        game.board.move(q.popleft())
+        move = q.popleft()
+        game.board.move(move)
         count += 1
-
-        #G = nx.DiGraph()
-
-        for side in (BLACK, WHITE):
+        #WHITE=0, BLACK=1
+        for side in (WHITE, BLACK):
             G = nx.DiGraph()
             for i in game.board.occupied_squares(side):
                 for ranks in RANKS:
@@ -56,16 +66,17 @@ if __name__ == "__main__":
                                 elif i.is_opponent(to_node):
                                     G.add_edge(from_node_position, to_node_position, weight=-1.0)
                                 else:
-                                    G.add_edge(from_node_position, to_node_position, weight=1.0)
-
-            print side, 
-            print nx.number_strongly_connected_components(G),
-            print nx.number_weakly_connected_components(G), 
+                                    G.add_edge(from_node_position, to_node_position, weight=1.0)                        
+            fout.write(move + '\t')                
+            fout.write(str(side) + '\t') 
+            fout.write(str(nx.number_strongly_connected_components(G)) + '\t')
+            fout.write(str(nx.number_weakly_connected_components(G)) + '\t')
             try:
-                print nx.average_shortest_path_length(G)
+                fout.write(str(nx.average_shortest_path_length(G)) + '\t')
             except:
-                print "Not connected"
-
+                fout.write("Not connected" + '\t')
+            fout.write(str(side == winner) + '\n')
+            '''
             edefensive=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] >= 0.0]
             #eoffensive=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] <= 0.0]
 
@@ -89,6 +100,8 @@ if __name__ == "__main__":
             plt.axis('off')
             plt.savefig("weighted_graph" + "_" + str(side) + "_" + str(count) + ".png")
             plt.clf()
+            '''
+fout.close()
 
     #import all games in .pgn file                        
     #file_pgn = file("john.pgn")

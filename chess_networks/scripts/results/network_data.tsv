@@ -1,0 +1,87 @@
+move	side	strongly_connected_components	weakly_connected_components	average_shortest_path_length	winner?	
+e4	0	26	3	Not connected	True
+e4	1	24	1	0.105072463768	False
+d6	0	26	3	Not connected	True
+d6	1	25	2	Not connected	False
+d4	0	28	4	Not connected	True
+d4	1	25	2	Not connected	False
+Nf6	0	28	4	Not connected	True
+Nf6	1	24	1	0.164855072464	False
+Nc3	0	27	4	Not connected	True
+Nc3	1	24	1	0.164855072464	False
+g6	0	27	4	Not connected	True
+g6	1	24	1	0.175724637681	False
+Nf3	0	26	2	Not connected	True
+Nf3	1	24	1	0.175724637681	False
+Bg7	0	26	2	Not connected	True
+Bg7	1	24	1	0.157608695652	False
+Be2	0	25	2	Not connected	True
+Be2	1	24	1	0.157608695652	False
+Nbd7	0	25	2	Not connected	True
+Nbd7	1	24	1	0.184782608696	False
+O-O	0	24	2	Not connected	True
+O-O	1	24	1	0.184782608696	False
+O-O	0	24	2	Not connected	True
+O-O	1	23	1	0.376811594203	False
+e5	0	23	1	0.288333333333	True
+e5	1	23	1	0.376811594203	False
+dxe5	0	21	1	0.286561264822	True
+dxe5	1	24	2	Not connected	False
+dxe5	0	22	2	Not connected	True
+dxe5	1	21	1	0.376623376623	False
+Ng4	0	22	2	Not connected	True
+Ng4	1	22	1	0.351778656126	False
+e6	0	21	1	0.254940711462	True
+e6	1	22	1	0.351778656126	False
+Nde5	0	22	2	Not connected	True
+Nde5	1	22	1	0.349802371542	False
+Qxd8	0	27	3	Not connected	True
+Qxd8	1	22	1	0.162337662338	False
+Rxd8	0	22	2	Not connected	True
+Rxd8	1	21	2	Not connected	False
+Nxe5	0	23	3	Not connected	True
+Nxe5	1	21	2	Not connected	False
+Nxe5	0	22	3	Not connected	True
+Nxe5	1	21	2	Not connected	False
+Nb5	0	23	3	Not connected	True
+Nb5	1	21	2	Not connected	False
+c6	0	23	3	Not connected	True
+c6	1	22	3	Not connected	False
+Nc7	0	22	3	Not connected	True
+Nc7	1	22	3	Not connected	False
+Rb8	0	22	3	Not connected	True
+Rb8	1	22	4	Not connected	False
+f4	0	23	4	Not connected	True
+f4	1	22	4	Not connected	False
+Ng4	0	24	4	Not connected	True
+Ng4	1	22	4	Not connected	False
+Bxg4	0	23	4	Not connected	True
+Bxg4	1	22	4	Not connected	False
+Bd4+	0	23	4	Not connected	True
+Bd4+	1	23	2	Not connected	False
+Kh1	0	23	4	Not connected	True
+Kh1	1	22	2	Not connected	False
+Bb6	0	23	4	Not connected	True
+Bb6	1	20	3	Not connected	False
+f5	0	22	3	Not connected	True
+f5	1	20	3	Not connected	False
+Bxc7	0	22	3	Not connected	True
+Bxc7	1	22	3	Not connected	False
+fxg6	0	22	3	Not connected	True
+fxg6	1	20	3	Not connected	False
+fxg6	0	20	4	Not connected	True
+fxg6	1	21	4	Not connected	False
+Bh6	0	18	5	Not connected	True
+Bh6	1	21	4	Not connected	False
+Be5	0	18	5	Not connected	True
+Be5	1	22	4	Not connected	False
+Rad1	0	19	5	Not connected	True
+Rad1	1	23	4	Not connected	False
+Rxd1	0	19	5	Not connected	True
+Rxd1	1	22	5	Not connected	False
+Rxd1	0	18	5	Not connected	True
+Rxd1	1	20	4	Not connected	False
+Bd6	0	19	5	Not connected	True
+Bd6	1	17	3	Not connected	False
+Rf1	0	18	6	Not connected	True
+Rf1	1	17	3	Not connected	False
